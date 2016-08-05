@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DropColumnEngDescItemTable extends Migration
+class AddItemIdToImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class DropColumnEngDescItemTable extends Migration
      */
     public function up()
     {
-        Schema::table('items', function (Blueprint $table) {
-            $table->dropColumn('eng_desc');
+        Schema::table('images', function (Blueprint $table) {
+            $table->integer('item_id')->unsigned();
         });
     }
 
@@ -24,7 +24,7 @@ class DropColumnEngDescItemTable extends Migration
      */
     public function down()
     {
-        Schema::table('items', function (Blueprint $table) {
+        Schema::table('images', function (Blueprint $table) {
             //
         });
     }

@@ -12,9 +12,12 @@ class DropColumnItemIdForImagesTable extends Migration
      */
     public function up()
     {
-        Schema::table('images', function (Blueprint $table) {
-                $table->dropForeign(['item_id']);
-        });
+        if (Schema::hasColumn('images', 'item_id'))
+        {
+            Schema::table('images', function (Blueprint $table) {
+                    $table->dropForeign(['item_id']);
+            });
+        }
     }
 
     /**
