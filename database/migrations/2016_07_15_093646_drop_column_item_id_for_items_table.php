@@ -12,9 +12,12 @@ class DropColumnItemIdForItemsTable extends Migration
      */
     public function up()
     {
-        Schema::table('items', function (Blueprint $table) {
+        if (Schema::hasColumn('items', 'item_id'))
+        {
+            Schema::table('items', function (Blueprint $table) {
                 $table->dropColumn('item_id');
-        });
+            });
+        }
     }
 
     /**
