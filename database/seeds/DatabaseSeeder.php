@@ -28,34 +28,23 @@ class DatabaseSeeder extends Seeder
         DB::table('images')->delete();
 
         $this->command->info('Creating users');
-        $leo = User::create([
-            'name' => 'Leonel Barrera',
-            'email' => 'leodota7@gmail.com',
-            'password' => bcrypt('mardan')
+        $default_user = User::create([
+            'name' => env('DEFAULT_USER_NAME'),
+            'email' => env('DEFAULT_USER_EMAIL'),
+            'password' => bcrypt(env('DEFAULT_USER_PASSWORD'))
         ]);
 
-        $mario = User::create([
-            'name' => 'Mario Martinez',
-            'email' => 'mario.martinez@ucc.edu.ni',
-            'password' => bcrypt('nami')
+        $another_default_user = User::create([
+          'name' => env('ANOTHER_DEFAULT_USER_NAME'),
+          'email' => env('ANOTHER_DEFAULT_USER_EMAIL'),
+          'password' => bcrypt(env('ANOTHER_DEFAULT_USER_PASSWORD'))
         ]);
 
         $this->command->info('Creating tags');
-        $tag1 = Tag::create([
-            'name' => 'Tag1'
-        ]);
-
-        $tag2 = Tag::create([
-            'name' => 'Tag2'
-        ]);
-
-        $tag3 = Tag::create([
-            'name' => 'Tag3'
-        ]);
-
-        $tag4 = Tag::create([
-            'name' => 'Tag4'
-        ]);
+        $tag1 = Tag::create(['name' => 'Tag1']);
+        $tag2 = Tag::create(['name' => 'Tag2']);
+        $tag3 = Tag::create(['name' => 'Tag3']);
+        $tag4 = Tag::create(['name' => 'Tag4']);
 
         $this->command->info('Creating posts');
         $post1 = Post::create([
@@ -83,8 +72,8 @@ class DatabaseSeeder extends Seeder
         $post2->tags()->attach($tag4->id);
 
         $this->command->info('Linking users with posts');
-        $mario->posts()->save($post1);
-        $mario->posts()->save($post2);
+        $another_default_user->posts()->save($post1);
+        $another_default_user->posts()->save($post2);
 
         $this->command->info('Creating images');
         $image = Image::create([
@@ -104,7 +93,7 @@ class DatabaseSeeder extends Seeder
         $item->images()->save($image);
 
         $this->command->info('Linking items with users');
-        $leo->items()->save($item);
+        $default_user->items()->save($item);
 
         $this->command->info('Seeding ended with no problems');
     }
