@@ -7,14 +7,14 @@
 
     <title>@yield('title')</title>
 
-    <link rel="stylesheet" href="{{ asset('components/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('components/font-awesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('stylesheets/dashboard/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('components/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('components/summernote/dist/summernote.css') }}">
+    <link rel="stylesheet" href="{{ asset('stylesheets/dashboard/app.css') }}">
 </head>
 <body>
-    <div class="col-md-1"></div>
-    <div class="col-md-9">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
         <a href="{{ '/posts' }}" class="btn-back btn btn-default">Regresar</a>
 
         @yield('content')
