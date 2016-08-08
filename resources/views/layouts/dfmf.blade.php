@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>@yield('title')</title>
+
     <link rel="stylesheet" href="{{ asset('components/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('components/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('stylesheets/dashboard/app.css') }}">
@@ -12,7 +15,7 @@
 <body>
     <div class="col-md-1"></div>
     <div class="col-md-9">
-        <a href="{{ '/posts' }}" class="btn-back btn btn-primary"><i class="fa fa-arrow-left fa-fw" aria-hidden="true"></i>&nbsp; Regresar</a>
+        <a href="{{ '/posts' }}" class="btn-back btn btn-default">Regresar</a>
 
         @yield('content')
     </div>
@@ -26,26 +29,23 @@
     <script type="text/javascript" src="{{ asset('components/summernote/lang/summernote-es-ES.js') }}"></script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
           $('#summernote').summernote({
-              height: 400,                 // set editor height
-              minHeight: null,             // set minimum height of editor
-              maxHeight: null,             // set maximum height of editor
-              lang: 'es-ES', // default: 'es-ES'
+              height: 400,
+              minHeight: null,
+              maxHeight: null,
+              lang: 'es-ES'
           });
-        if ($('#summernote').summernote('isEmpty')) {
-          alert('contents is empty');
-        }
-        });
+
+          if ($('#summernote').summernote('isEmpty')) {
+            alert('contents is empty');
+          }
     </script>
 
     <script>
         $("#estado").change(function() {
-            if($(this).is(':checked')) {
-                $("#borrador").html("Publicar");
-            } else {
-                $("#borrador").html("Guardar como borrador");
-            }
+          var message = $(this).is(':checked') ? 'Publicar' : 'Guardar como borrador'
+
+          $('#borrador').html(message);
         });
     </script>
 </body>
