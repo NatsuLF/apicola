@@ -8,10 +8,10 @@
         <meta itemprop="description" content="Blog informativo del Proyecto apicola - UCC">
         <meta itemprop="image" content="https://dl.dropboxusercontent.com/s/qodhyrzlqiimghi/Logo.png?dl=0">
 
-        <meta property="og:url"           content="http://www.localhost:8000/blog/" />
+        <meta property="og:url"           content="{{ Request::url() }}" />
         <meta property="og:type"          content="website" />
         <meta property="og:title"         content="Proyecto Apicola - UCC" />
-        <meta property="og:description"   content="Diseño de colmenas modelo Vincent" />
+        <meta property="og:description"   content="Diseño de colmenas hexagonales modelo Vincent" />
         <meta property="og:image"         content="https://dl.dropboxusercontent.com/s/qodhyrzlqiimghi/Logo.png?dl=0" />
 
         <title>Proyecto Apicola - @yield('title')</title>
