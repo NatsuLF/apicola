@@ -35,7 +35,7 @@
                 </li>
                 <li class="{{ $controller == 'PostController' ? 'active' : 'no-active' }}">
                     <a href="{{ url('blog') }}">
-                        <i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i> Blog
+                        <i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i> {{ trans('messages.news') }}
                     </a>
                 </li>
                 <li class="dropdown language">
