@@ -7,6 +7,7 @@ use App\Post;
 use App\Tag;
 use App\Image;
 use App\Item;
+use App\Activity;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
         DB::table('tags')->delete();
         DB::table('items')->delete();
         DB::table('images')->delete();
+        DB::table('activities')->delete();
 
         $this->command->info('Creating users');
         $default_user = User::create([
@@ -94,6 +96,21 @@ class DatabaseSeeder extends Seeder
 
         $this->command->info('Linking items with users');
         $default_user->items()->save($item);
+
+        $this->command->info('Seeding activities');
+        $today = new DateTime();
+
+        Activity::create([
+          'date' => $today->add(new DateInterval('P15D')),
+          'location' => 'Some address goes here',
+          'name' => 'Activity name'
+        ]);
+
+        Activity::create([
+          'date' => $today->add(new DateInterval('P10D')),
+          'location' => 'Another address goes here',
+          'name' => 'Another activity name'
+        ]);
 
         $this->command->info('Seeding ended with no problems');
     }
