@@ -37,5 +37,11 @@ return [
     'name' => 'Nombre',
     'mail' => 'Correo',
     'message' => 'Mensaje',
-    'grats' =>  'Gracias por escribirnos, pronto te contactaremos.'
+    'grats' =>  'Gracias por escribirnos, pronto te contactaremos.',
+
+    // Services
+    'courses' => 'Cursos',
+    'consultation' => 'Asesoria',
+    'development_projects' => 'Proyectos en desarrollo',
+    'manual' => 'Descarga de manual',
 ];
