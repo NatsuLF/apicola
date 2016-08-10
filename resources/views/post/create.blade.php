@@ -3,6 +3,8 @@
 @section('title', 'Agregar post')
 
 @section('content')
+  <a href="{{ url('posts') }}">Regresar</a>
+
     <form action="{{ '/posts' }}" id="form" method="post" autocomplete="off">
         {{ csrf_field() }}
         @include('post.form')

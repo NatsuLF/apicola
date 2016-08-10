@@ -14,4 +14,9 @@
           <i class="fa fa-shopping-bag fa-fw fa-lg" aria-hidden="true"></i> Productos
         </a>
     </li>
+    <li role="presentation" class="{{ $controller == 'ActivityController' ? 'active' : 'no-active' }}">
+        <a href="{{ url('activities') }}">
+          <i class="fa fa-bell-o" aria-hidden="true"></i> Actividades
+        </a>
+    </li>
 </ul>

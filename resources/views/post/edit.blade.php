@@ -3,6 +3,8 @@
 @section('title', 'Editar post')
 
 @section('content')
+    <a href="{{ url('posts') }}">Regresar</a>
+
     <form action="{{ '/posts/' . $post->id }}" id="form" method="post" autocomplete="off">
         {{ csrf_field() }}
         <input type="hidden" name="id">

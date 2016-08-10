@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="{{ asset('components/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('components/summernote/dist/summernote.css') }}">
     <link rel="stylesheet" href="{{ asset('stylesheets/dashboard/app.css') }}">
+
+    @yield('stylesheets')
 </head>
 <body>
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <a href="{{ '/posts' }}" class="btn-back btn btn-default">Regresar</a>
-
         @yield('content')
     </div>
     <div class="col-md-2">
@@ -25,27 +25,30 @@
 
     <script src="{{ asset('components/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('components/summernote/dist/summernote.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('components/summernote/lang/summernote-es-ES.js') }}"></script>
+    <script src="{{ asset('components/summernote/dist/summernote.js') }}"></script>
+    <script src="{{ asset('components/summernote/lang/summernote-es-ES.js') }}"></script>
 
-    <script type="text/javascript">
-          $('#summernote').summernote({
-              height: 400,
-              minHeight: null,
-              maxHeight: null,
-              lang: 'es-ES'
-          });
-
-          if ($('#summernote').summernote('isEmpty')) {
-            alert('contents is empty');
-          }
-    </script>
+    @yield('javascripts')
 
     <script>
+        $('#summernote').summernote({
+            height: 400,
+            minHeight: null,
+            maxHeight: null,
+            lang: 'es-ES'
+        });
+
         $("#estado").change(function() {
           var message = $(this).is(':checked') ? 'Publicar' : 'Guardar como borrador'
 
           $('#borrador').html(message);
+        });
+
+        $('#date').datetimepicker({
+            format: 'YYYY-MM-DD',
+            viewMode: 'days',
+            useCurrent: false,
+            minDate: moment().add(0, 'days')
         });
     </script>
 </body>
