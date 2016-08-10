@@ -44,4 +44,7 @@ return [
     'consultation' => 'Asesoria',
     'development_projects' => 'Proyectos en desarrollo',
     'manual' => 'Descarga de manual',
+
+    // ACTIVITIES
+    'activities' => 'Actividades'
 ];
