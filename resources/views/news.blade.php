@@ -8,10 +8,11 @@
             <h1>{{ trans('messages.banner') }}</h1>
             <p>{{ trans('messages.banner_content') }}</p>
         </div>
+    </div>
 
+    <div class="col-md-9">
         @if (count($posts) > 0)
             @foreach ($posts as $post)
-                <br>
                 <div class="panel panel-primary">
                     <div class="panel-heading" id="{{ $post->slug }}">
                         <div class="panel-title">
@@ -39,6 +40,31 @@
         @else
             <p>Nada que mostrar</p>
         @endif
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{ count($activities) }} {{ trans('messages.activities') }}
+            </div>
+
+            <div class="panel-body">
+                @foreach ($activities as $index => $activity)
+                    <label>Nombre</label>
+                    <p>{{ $activity->name }}</p>
+
+                    <label>Lugar</label>
+                    <p>{{ $activity->location }}</p>
+
+                    <label>Fecha</label>
+                    <p>{{ $activity->date }}</p>
+
+                    @if ($index < count($activities) - 1)
+                        <hr>
+                    @endif
+                @endforeach
+            </div>
+        </div>
     </div>
 @endsection
 
