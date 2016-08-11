@@ -2,42 +2,31 @@
 
 namespace App\Http\Controllers;
 
-// use Mail;
-use Illuminate\Support\Facades\Mail;
-use App\Http\Middleware\Session;
+use Mail;
+use Validator;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
 
 class MailController extends Controller
 {
     public function sendMail(Request $request)
     {
-        $rules = array(
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'mail' => 'required|email',
             'body' => 'required'
-        );
-
-        $validator = Validator::make($request->all(), $rules);
+        ]);
 
         if ($validator->fails()) {
-            $messages = $validator->messages();
-
-            echo $messages;
-
-            return redirect('contacto');
+            return redirect()->back();
         }
 
-        $name = $request->input('name');
-        $mail = $request->input('mail');
-        $body = $request->input('body');
+        $data = ['name' => $request->name, 'mail' => $request->mail, 'body' => $request->body];
 
-        Mail::send('emails.contact', ['name' => $name, 'mail' => $mail, 'body' => $body], function($m)
+        Mail::send('email.contact', $data, function($message) use ($data)
         {
-            $m->to('leodota7@gmail.com')->subject('Proyecto Tranferencia Tecnologica Apicola - UCC');
+            $message->from($data['mail'], $data['name']);
+            $message->to('leodota7@gmail.com')->subject('Contact email');
         });
 
         return view('greeting');

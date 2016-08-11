@@ -1,12 +1,17 @@
 @extends('layouts.distractionfree')
 
-@section('title', 'Gracias por escribir')
+@section('title', 'Greeting')
 
 @section('content')
-        <div class="col-md-6 col-md-offset-3">
-            <h1>{{ trans('messages.grats') }}</h1>
-            <p>
-                <a href="contacto" class="btn btn-primary" title="">{{ trans('messages.btn_continue_mail') }}</a>
-            </p>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="well well-sm">
+            <p>{{ trans('messages.greeting') }}</p>
+
+            <a href="{{ url('contacto') }}" class="btn btn-default">
+                {{ trans('messages.go_to_contact') }}
+            </a>
         </div>
+    </div>
+    <div class="col-md-4"></div>
 @endsection

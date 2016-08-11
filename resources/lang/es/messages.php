@@ -16,7 +16,7 @@ return [
     'btn_add_to_car' => 'Añadir al carro de compras',
     'btn_go_back_post' => 'Volver',
     'btn_go_back_item' => 'Volver',
-    'btn_continue_mail' => 'Continuar',
+    'go_to_contact' => 'Continuar',
 
     // BLOG
     'banner' => 'Hola, Bienvenido',
@@ -37,7 +37,7 @@ return [
     'name' => 'Nombre',
     'mail' => 'Correo',
     'message' => 'Mensaje',
-    'grats' =>  'Gracias por escribirnos, pronto te contactaremos.',
+    'greeting' =>  'Gracias por escribirnos, pronto te contactaremos.',
 
     // Services
     'courses' => 'Cursos',
