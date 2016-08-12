@@ -149,9 +149,9 @@ class PostController extends Controller
 
     public function details(String $slug)
     {
-        $posts = Post::where('slug', '=', $slug)->get();
+        $post = Post::where('slug', '=', $slug)->first();
 
-        return view('detail_post', ['posts' => $posts]);
+        return view('detail_post', ['post' => $post]);
     }
 
     private function get_tags_id($tags)

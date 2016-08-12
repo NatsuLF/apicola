@@ -21,6 +21,7 @@ return [
     // BLOG
     'banner' => 'Hola, Bienvenido',
     'banner_content' => 'En esta area podras informarte acerca de las diversas actividades que realizamos, ademas de publicar contenidos que te ayudaran a entender de que se trata la apicultura. Esperemos que disfrutes de nuestro pequeño Blog.',
+    'by' => 'Por',
 
     // MISIÓN VISIÓN
     'mission' => 'Mision',
@@ -46,5 +47,9 @@ return [
     'manual' => 'Descarga de manual',
 
     // ACTIVITIES
-    'activities' => 'Actividades'
+    'activities' => 'Actividades',
+
+    // ITEMS
+    'description' => 'Descripcion',
+    'price' => 'Precio'
 ];

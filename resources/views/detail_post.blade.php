@@ -3,25 +3,22 @@
 @section('title', 'Posts')
 
 @section('content')
-    <div id="fb-root"></div>
     <div class="col-md-11">
-        @foreach ($posts as $post)
-            <div class="jumbotron">
-                <a class="btn btn-success btn-back" href="{{ url()->previous() . '#' . $post->slug }}">
-                    {{ trans('messages.btn_go_back_post') }}
-                </a>
+        <div class="well">
+            <a class="btn btn-default btn-back" href="{{ url()->previous() . '#' . $post->slug }}">
+                {{ trans('messages.btn_go_back_post') }}
+            </a>
 
-                <h2>{{ $post->title }}</h2>
-                <cite>{{ $post->user->name }}</cite>
-                <small> {{ $post->created_at->format('M j, Y') }}</small>
-
+            <h4>{{ $post->title }}</h4>
+            <p>{{ trans('messages.by') }} {{ $post->user->name }}, {{ $post->created_at->format('Y-m-j') }}</p>
+            <p>
                 @foreach ($post->tags as $tag)
                     <span class="label label-success">{{ $tag->name }}</span>
                 @endforeach
+            </p>
 
-                <p>{!! $post->body !!}</p>
-            </div>
-        @endforeach
+            <p>{!! $post->body !!}</p>
+        </div>
     </div>
 
     <div class="col-md-1">

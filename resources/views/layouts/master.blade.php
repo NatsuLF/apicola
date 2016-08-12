@@ -29,10 +29,6 @@
             </div>
         </div>
 
-        <div>
-            @yield('footer')
-        </div>
-
         <script src="{{ asset('components/jquery/dist/jquery.min.js') }}"></script>
         <script src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/textarea.js') }}"></script>
