@@ -14,33 +14,33 @@
 @endsection
 
 @section('content')
-    <div class="col-md-12">
-        <div class="well">
-            <div class="row">
-                <div class="col-md-6">
-                    <a class="btn btn-success"
-                    href="{{ url()->previous() . '#' . $item->slug }}">
-                        {{ trans('messages.btn_go_back_item') }}
-                    </a>
-                    <h4 class=""><i class="fa fa-caret-right" aria-hidden="true"></i>
-                        {{ $item->name }}
-                    </h4>
+    <div class="well">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="btn btn-default" href="{{ url()->previous() . '#' . $item->slug }}">
+                    {{ trans('messages.btn_go_back_item') }}
+                </a>
+                <h4>{{ $item->name }}</h4>
 
-                    <small>Descripcion</small>
-                    <p>{{ $item->description }}</p>
+                <label>{{ trans('messages.description') }}</label>
+                <p>{{ $item->description }}</p>
 
-                    <small>Precio</small>
-                    <p>{{ '$ ' . $item->price }}</p>
+                <label>{{ trans('messages.price') }}</label>
+                <p>{{ '$ ' . $item->price }}</p>
 
-                    <div class="btn-buy">
-                        <button type="button" class="btn btn-success"><i class="fa fa-paypal fa-lg" aria-hidden="true"></i>
-                         {{ trans('messages.btn_buy_now') }}</button>
-                        <button type="button" class="btn btn-info"><i class="fa fa-cart-plus fa-lg" aria-hidden="true"></i>
-                         {{ trans('messages.btn_add_to_car') }}</button>
-                    </div>
+                <div class="btn-buy">
+                    <button type="button" class="btn btn-success">
+                        <i class="fa fa-paypal fa-lg" aria-hidden="true"></i> {{ trans('messages.btn_buy_now') }}
+                    </button>
+
+                    <button type="button" class="btn btn-info">
+                        <i class="fa fa-cart-plus fa-lg" aria-hidden="true"></i> {{ trans('messages.btn_add_to_car') }}
+                    </button>
                 </div>
+            </div>
 
-                <div class="col-md-6">
+            <div class="col-md-6">
+                @if (count($item->images) > 1)
                     <div id="carousel-id" class="carousel slide" data-ride="carousel" style="height: 400px; margin: 0 auto">
                         <ol class="carousel-indicators">
                             @foreach ($item->images as $index => $image)
@@ -51,7 +51,7 @@
                         <div class="carousel-inner" role="listbox">
                             @foreach ($item->images as $index => $image)
                                 <div class="item {{ $index === 0 ? 'active' : '' }}">
-                                    <img style="height: 400px; margin: 0 auto;" src="{{ $image->url }}" alt="">
+                                    <img style="width: 100%; height: 400px;" src="{{ $image->url }}" alt="{{ $item->name }}">
                                     <div class="carousel-caption">lorem</div>
                                 </div>
                             @endforeach
@@ -66,9 +66,10 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-                </div>
+                @else
+                    <img src="{{ $item->images[0]->url }}" alt="{{ $item->name }}" class="img-responsive" style="width: 100%; height: 400px;">
+                @endif
             </div>
-
         </div>
     </div>
 @endsection

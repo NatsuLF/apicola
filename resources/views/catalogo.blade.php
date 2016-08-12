@@ -7,12 +7,11 @@
         <div class="well" id="{{ $item->slug }}">
             <div class="row">
                 <div class="col-md-6">
-                    <h4 class=""><i class="fa fa-arrow-right" aria-hidden="true"></i>
-                    {{ $item->name }}</h4>
-                    <small>Descripcion</small>
+                    <h4>{{ $item->name }}</h4>
+                    <label>{{ trans('messages.description') }}</label>
                     <p>{{ $item->description }}</p>
 
-                    <small>Precio</small>
+                    <label>{{ trans('messages.price') }}</label>
                     <p>{{ '$ ' . $item->price }}</p>
 
                     <a class="btn btn-info" href="{{ url('catalogo' . '/' . $item->slug) }}">
@@ -21,15 +20,9 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div style="overflow: hidden; height: auto; max-height: 500px; ">
-                        <img src="{{ $item->images[0]->url }}" alt="">
-                    </div>
+                    <img src="{{ $item->images[0]->url }}" alt="{{ $item->name }}" class="img-responsive" style="width: 100%; height: 400px;">
                 </div>
             </div>
         </div>
     @endforeach
-@endsection
-
-@section('footer')
-    @include('shared.footer')
 @endsection

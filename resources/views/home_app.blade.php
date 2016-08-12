@@ -8,7 +8,3 @@
         @include('shared.objetives')
     </div>
 @endsection
-
-@section('footer')
-    @include('shared.footer')
-@endsection

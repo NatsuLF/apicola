@@ -16,7 +16,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading" id="{{ $post->slug }}">
                         <div class="panel-title">
-                            <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        <div class="clearfix">
                             {{ $post->title }}
 
                             <div class="pull-right">
@@ -25,16 +25,18 @@
                                 @endforeach
                             </div>
                         </div>
+                        </div>
                     </div>
                     <div class="panel-body">
                         <p>{!! $post->summary !!}</p>
                     </div>
-                </div>
-
-                <div class="clearfix">
-                    <a href="{{ '/blog/' . $post->slug }}" class="btn btn-primary pull-right">
-                        {{ trans('messages.btn_blog') }} <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
-                    </a>
+                    <div class="panel-footer" style="background: #FFF; border-top: 0;">
+                        <div class="clearfix">
+                            <a href="{{ '/blog/' . $post->slug }}" class="pull-right">
+                                {{ trans('messages.btn_blog') }}
+                            </a>
+                        </div>
+                    </div>
                 </div>
             @endforeach
         @else
@@ -43,7 +45,7 @@
     </div>
 
     <div class="col-md-3">
-        <div class="panel panel-default">
+        <div class="panel panel-primary">
             <div class="panel-heading">
                 {{ count($activities) }} {{ trans('messages.activities') }}
             </div>
@@ -66,8 +68,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('footer')
-    @include('shared.footer')
 @endsection

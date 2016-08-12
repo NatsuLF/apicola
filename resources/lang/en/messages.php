@@ -8,7 +8,7 @@ return [
     'contact' => 'Contact us',
     'news' => 'News',
 
-    // BUTTOMS
+    // BUTTONS
     'btn_blog' => 'Read more',
     'btn_catalog' => 'Detail',
     'btn_contact_us' => 'Send',
@@ -16,13 +16,14 @@ return [
     'btn_add_to_car' => 'Add to Cart',
     'btn_go_back_post' => 'Go back',
     'btn_go_back_item' => 'Go back',
-    'btn_continue_mail' => 'Continue',
+    'go_to_contact' => 'Continue',
 
     // BLOG
     'banner' => 'Hello, Welcome',
     'banner_content' => 'In this area you can inform about the various activities we do , besides publishing content that will help you to understand that beekeeping is . Hopefully you enjoy our little Blog.',
+    'by' => 'By',
 
-    // MISIÓN VISIÓN
+    // MISION VISION
     'mission' => 'Mission',
     'mission_content' => 'We are a company dedicated to research, innovation and development of apiculture products quality. We design, manufacture and market model hexagonal hives Vincent, equipment and accessories for beekeeping in order to meet the highest expectations of our customers. We are highly committed to environmental conservation, restoration of ecosystems, and social - economic development of beekeeping.',
     'view' => 'View',
@@ -37,7 +38,7 @@ return [
     'name' => 'Name',
     'mail' => 'Mail',
     'message' => 'Message',
-    'grats' =>  'Thanks for writing to us. Soon we will contact you.',
+    'greeting' =>  'Thanks for writing to us. Soon we will contact you.',
 
     // SERVICES
     'courses' => 'Courses',
@@ -46,5 +47,9 @@ return [
     'manual' => 'Download manual',
 
     // ACTIVITIES
-    'activities' => 'Activities'
+    'activities' => 'Activities',
+
+    // ITEMS
+    'description' => 'Description',
+    'price' => 'Price'
 ];
