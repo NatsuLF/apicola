@@ -5,15 +5,11 @@
 
 <div class="form-group">
     <label for="summary">Sumario</label>
-    <textarea id="summary" name="summary" class="form-control" required>
-        {{ isset($post->summary) ? $post->summary : '' }}
-    </textarea>
+    <textarea name="summary" id="summary" class="form-control" maxlength="255" required>{{ isset($post->summary) ? $post->summary : '' }}</textarea>
 </div>
 
 <div class="form-group">
     <label for="body">Contenido del Post</label>
-    <textarea id="summernote" name="body">
-        {{ isset($post->body) ? $post->body : '' }}
-    </textarea>
+    <textarea id="summernote" name="body">{{ isset($post->body) ? $post->body : '' }}</textarea>
 </div>
 

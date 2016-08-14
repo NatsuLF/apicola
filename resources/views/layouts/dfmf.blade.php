@@ -32,8 +32,8 @@
 
     <script>
         $('#summernote').summernote({
-            height: 400,
-            minHeight: null,
+            height: 250,
+            minHeight: 250,
             maxHeight: null,
             lang: 'es-ES'
         });

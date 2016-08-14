@@ -1,9 +1,4 @@
-<h3>
-    <span class="label label-primary">
-        <i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp; Categorias
-    </span>
-</h3>
-
+<p><i class="fa fa-tags" aria-hidden="true"></i> Categorias</p>
 @foreach ($tags as $tag)
     <div class="checkbox">
         <label>
@@ -18,19 +13,13 @@
                             checked="true"
                         @endif
                     @endforeach
-                @endif
-                >
+                @endif>
             {{ $tag->name }}
         </label>
     </div>
 @endforeach
 
-<h3>
-    <span class="label label-primary">
-        <i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp; Estado
-    </span>
-</h3>
-
+<p><i class="fa fa-rss" aria-hidden="true"></i> Estado</p>
 <div class="checkbox">
     <label id="text">
         <input

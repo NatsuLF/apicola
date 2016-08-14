@@ -1,17 +1,18 @@
 body {
     padding-top: 70px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
-  text-transform: uppercase;
-  font-size: 0.7em;
-  font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    font-weight: normal;
 }
 
 textarea#summary {
     resize: vertical;
-    min-height: 100px;
-    max-height: 150px;
+    min-height: 70px;
+    max-height: 100px;
 }
 
 .btn-back {
@@ -22,3 +23,5 @@ textarea#summary {
 .alert { margin-top: 5px; }
 
 .tabs { margin-bottom: 10px; }
+
+.table > tbody > tr > td { vertical-align: middle; }

@@ -19,5 +19,5 @@
 @endsection
 
 @section('tags')
-    @include('shared.tags')
+    @include('post.tags')
 @endsection
