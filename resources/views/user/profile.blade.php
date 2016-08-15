@@ -18,7 +18,10 @@
             <input type="email" id="email" class="form-control" name="email" value="{{ $current_user->email }}" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <div class="clearfix">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <a href="{{ url('posts') }}" class="btn btn-default pull-right">Regresar</a>
+        </div>
     </form>
 
     @include('shared.message')

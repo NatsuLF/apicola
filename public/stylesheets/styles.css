@@ -16,7 +16,7 @@ label {
 
 textarea#body {
     resize: vertical;
-    min-height: 200px;
+    min-height: 150px;
     max-height: auto;
 }
 

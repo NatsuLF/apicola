@@ -23,7 +23,10 @@
             <input type="password" class="form-control" name="confirmPassword" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <div class="clearfix">
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <a href="{{ url('posts') }}" class="btn btn-default pull-right">Regresar</a>
+        </div>
     </form>
 
     @include('shared.message')
