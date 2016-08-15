@@ -13,8 +13,6 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Input;
 use app\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Redirect;
-// use Illuminate\Support\Facades\Validator;
-//use Illuminate\Contracts\Auth\Authenticatable;
 
 class UserController extends Controller
 {
@@ -23,18 +21,20 @@ class UserController extends Controller
         $action = $route->getName();
         $current_user = $request->user();
 
-        return view('users.profile', ['action' => $action, 'current_user' => $current_user]);
+        return view('user.profile', [
+            'action' => $action,
+            'current_user' => $current_user,
+            'letter' => $this->get_current_user_name_first_letter($current_user->name)
+        ]);
     }
 
     public function update_profile(Request $request)
     {
         $current_user = $request->user();
-        // $data = User::where('email', '=', $request->email)->first();
         $rules = [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' .$current_user->id,
         ];
-
         $messages = [
             'required' => 'Todos los campos son requeridos.',
             'email' => 'El campo ingresado no es de tipo email.',
@@ -59,7 +59,11 @@ class UserController extends Controller
         $action = $route->getName();
         $current_user = $request->user();
 
-        return view('users.password', ['action' => $action, 'current_user' => $current_user]);
+        return view('user.password', [
+            'action' => $action,
+            'current_user' => $current_user,
+            'letter' => $this->get_current_user_name_first_letter($current_user->name)
+        ]);
     }
 
     public function update_password(Request $request)
@@ -88,5 +92,10 @@ class UserController extends Controller
         $current_user->save();
 
         return redirect()->back()->with('message', 'Actualizado !');
+    }
+
+    private function get_current_user_name_first_letter($name)
+    {
+        return strtoupper($name[0]);
     }
 }

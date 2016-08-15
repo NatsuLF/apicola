@@ -3,19 +3,20 @@
 @section('title', 'Perfil de usuario')
 
 @section('content')
-    <div class="text-center">
-        <img src="https://pbs.twimg.com/profile_images/636801097550557184/SOeLxnO0.png" alt="" class="img-circle" width="10%">
-        <p>{{ $current_user->name }}
-        <br>
-        <small>{{ $current_user->email }}</small>
-        </p>
-    </div>
-
-    @include('shared.user_navs')
+    @include('user.data')
+    @include('user.nav')
 
     <form action="{{ '/user/profile' }}" method="post" autocomplete="off" novalidate>
         {{ csrf_field() }}
-        @include('shared.form_user')
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" value="{{ $current_user->name }}" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Correo</label>
+            <input type="email" id="email" class="form-control" name="email" value="{{ $current_user->email }}" required>
+        </div>
 
         <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>
