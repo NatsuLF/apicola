@@ -2,6 +2,10 @@
 
 @section('title', 'Agregar producto')
 
+@section('stylesheets')
+    <link rel="stylesheet" href="{{ URL::asset('components/font-awesome/css/font-awesome.min.css') }}">
+@endsection
+
 @section('javascripts')
     <script src="{{ asset('components/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>

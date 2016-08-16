@@ -3,10 +3,13 @@
 @section('title', 'Editar post')
 
 @section('stylesheets')
+    <link rel="stylesheet" href="{{ asset('components/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('components/summernote/dist/summernote.css') }}">
 @endsection
 
 @section('javascripts')
+    <script src="{{ asset('components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('components/summernote/dist/summernote.js') }}"></script>
     <script src="{{ asset('components/summernote/lang/summernote-es-ES.js') }}"></script>
     <script src="{{ asset('js/posts.js') }}"></script>
