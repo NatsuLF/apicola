@@ -12,7 +12,7 @@ class ActivityController extends Controller
 {
     public function index()
     {
-        $activities = Activity::all();
+        $activities = Activity::orderBy('created_at', 'desc')->get();
 
         return view('activity.index', ['activities' => $activities]);
     }
@@ -24,16 +24,10 @@ class ActivityController extends Controller
 
     public function save(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'date' => 'required|date|after:today',
-            'location' => 'required',
-            'name' => 'required'
-        ]);
+        $validator = Validator::make($request->all(), $this->get_rules());
 
         if ($validator->fails()) {
-            return redirect('activities/create')
-                ->withErrors($validator)
-                ->withInput();
+            return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $activity = new Activity;
@@ -54,11 +48,7 @@ class ActivityController extends Controller
 
     public function update(Activity $activity, Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'date' => 'required|date|after:today',
-            'location' => 'required',
-            'name' => 'required'
-        ]);
+        $validator = Validator::make($request->all(), $this->get_rules());
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
@@ -80,5 +70,14 @@ class ActivityController extends Controller
         $activity->delete();
 
         return redirect('activities')->with('status', 'Actividad eliminada');
+    }
+
+    public function get_rules()
+    {
+        return [
+            'date' => 'required|date|after:yesterday',
+            'location' => 'required',
+            'name' => 'required'
+        ];
     }
 }

@@ -1,6 +1,19 @@
+jQuery.datetimepicker.setLocale('es');
 $('#date').datetimepicker({
-    format: 'YYYY-MM-DD',
-    viewMode: 'days',
-    useCurrent: false,
-    minDate: moment().add(0, 'days')
+    i18n: {
+        es: {
+            months: [
+                'Enero', 'Febrero', 'Marzo', 'Abril',
+                'Mayo', 'Junio', 'Julio', 'Agosto',
+                'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+            ],
+            dayOfWeek: [
+                'Domingo', 'Lunes', 'Martes',
+                'Miercoles', 'Jueves', 'Viernes', 'Sabado'
+            ]
+        }
+    },
+    timepicker: false,
+    format: 'Y-m-d',
+    minDate: 0
 });
