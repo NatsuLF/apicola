@@ -18,6 +18,29 @@
                         <i class="fa fa-home" aria-hidden="true"></i> {{ trans('messages.about') }}
                     </a>
                 </li>
+                <li class="dropdown colmen {{ $controller == 'StaticController' && $action == 'colmen' ? 'active' : '' }}">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        La Colmena<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ url('colmen') }}">
+                                La colmena
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Como iniciar
+                            </a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a href="#">
+                                Analizis Financiero
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="{{ $controller == 'ItemController' ? 'active' : 'no-active' }}">
                     <a href="/catalogo">
                         <i class="fa {{ $controller == 'ItemController' ? 'fa-folder-open-o' : 'fa-folder-o' }} " aria-hidden="true"></i> {{ trans('messages.catalog') }}

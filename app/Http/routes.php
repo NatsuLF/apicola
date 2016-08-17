@@ -15,10 +15,12 @@ Route::get('/login', function() {
 // STATIC
 Route::get('/', 'StaticController@about');
 
-Route::get('/services', 'StaticController@services');
+Route::get('colmen', 'StaticController@colmen');
+
+Route::get('services', 'StaticController@services');
 
 // MAIL
-Route::get('/contacto', 'ContactController@contact');
+Route::get('contacto', 'ContactController@contact');
 
 Route::post('sendMail', 'MailController@sendMail');
 

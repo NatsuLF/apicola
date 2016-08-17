@@ -13,6 +13,11 @@ class StaticController extends Controller
         return view('home_app');
     }
 
+    public function colmen()
+    {
+        return view('colmen');
+    }
+
     public function services()
     {
         return view('servicios');
