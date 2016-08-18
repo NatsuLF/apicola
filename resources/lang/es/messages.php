@@ -29,7 +29,7 @@ return [
 
     // mision vision
     'mission' => 'Mision',
-    'mission_content' => 'Somos una empresa dedicada a la investigación, innovación y desarrollo de productos de la apicultura de calidad. Diseñamos, fabricamos y comercializamos colmenas hexagonales modelo Vincent, equipos y accesorios para la apicultura con el fin de cumplir con las más altas expectativas de nuestros clientes . Estamos altamente comprometidos con la conservación del medio ambiente,la restauración de los ecosistemas, y el desarrollo social - económico de la apicultura.',
+    'mission_content' => 'Somos un programa dedicado a la investigación, innovación y desarrollo tecnológicos de productos en el sector apícola. Diseñamos, fabricamos colmenas hexagonales modelo Vincent, basados en el hábitat natural de las abejas. Estamos altamente comprometidos con la conservación del ambiente, la restauración de los ecosistemas, y el desarrollo social - económico de la apicultura promoviendo un modelo productivo apícola sostenible.',
     'view' => 'Vision',
     'view_content' => 'Convertirse en un líder en la fabricación de productos de colmenas y la distribución y servicio al cliente que siempre están buscando la excelencia y el liderazgo en la apicultura.',
 
