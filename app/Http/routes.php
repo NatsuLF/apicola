@@ -4,29 +4,24 @@ use Illuminate\Http\Request;
 
 Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
 
-Route::get('/contacto', function() {
-    return view('contacto');
-});
-
-Route::get('/login', function() {
-    return view('/auth/login');
-});
-
 // STATIC
 Route::get('/', 'StaticController@about');
+
+Route::get('/hive', 'StaticController@hive');
+
+Route::get('/financial_analysis', 'StaticController@financial_analysis');
 
 Route::get('/services', 'StaticController@services');
 
 // MAIL
-Route::get('/contacto', 'ContactController@contact');
+Route::get('contact', 'ContactController@contact');
 
-Route::post('sendMail', 'MailController@sendMail');
+Route::post('sendMail', 'ContactController@sendMail');
 
 // TAGS
 Route::get('tags', 'TagController@index');
 
 Route::get('tags/create', 'TagController@create');
-
 
 Route::post('tags', 'TagController@save');
 
@@ -38,7 +33,6 @@ Route::delete('tags/{tag}', 'TagController@delete');
 
 // AUTH
 Route::auth();
-
 
 // POST - Public
 Route::get('blog', 'PostController@blog');

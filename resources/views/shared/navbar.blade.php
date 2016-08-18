@@ -18,6 +18,29 @@
                         <i class="fa fa-home" aria-hidden="true"></i> {{ trans('messages.about') }}
                     </a>
                 </li>
+                <li class="dropdown {{ $controller == 'StaticController' && in_array($action, ['hive', 'getting_started', 'financial_analysis']) ? 'active' : '' }}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                        <i class="fa fa-circle-o" aria-hidden="true"></i> {{ trans('messages.hive') }} <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li class="{{ $action == 'hive' ? 'active' : '' }}">
+                            <a href="{{ url('hive') }}">
+                                {{ trans('messages.beehive') }}
+                            </a>
+                        </li>
+                        <li class="{{ $action == 'getting_started' ? 'active' : '' }}">
+                            <a href="{{ url('hive') }}">
+                                {{ trans('messages.getting_started') }}
+                            </a>
+                        </li>
+                        <li class="{{ $action == 'financial_analysis' ? 'active' : '' }}">
+                            <a href="{{ url('financial_analysis') }}">
+                                {{ trans('messages.financial_analysis') }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="{{ $controller == 'ItemController' ? 'active' : 'no-active' }}">
                     <a href="/catalogo">
                         <i class="fa {{ $controller == 'ItemController' ? 'fa-folder-open-o' : 'fa-folder-o' }} " aria-hidden="true"></i> {{ trans('messages.catalog') }}
@@ -29,7 +52,7 @@
                     </a>
                 </li>
                 <li class="{{ $controller == 'ContactController' ? 'active' : 'no-active' }}">
-                    <a href="/contacto">
+                    <a href="{{ url('contact') }}">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i> {{ trans('messages.contact') }}
                     </a>
                 </li>

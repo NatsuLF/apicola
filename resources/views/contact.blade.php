@@ -7,7 +7,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading">{{ trans('messages.title_panel') }}</div>
             <div class="panel-body">
-                <form action="sendMail" method="post" role="form">
+                <form action="{{ url('sendMail') }}" method="post" role="form">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name">{{ trans('messages.name') }}</label>

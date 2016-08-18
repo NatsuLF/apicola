@@ -13,6 +13,16 @@ class StaticController extends Controller
         return view('home_app');
     }
 
+    public function hive()
+    {
+        return view('hive');
+    }
+
+    public function financial_analysis()
+    {
+        return view('financial_analysis');
+    }
+
     public function services()
     {
         return view('servicios');

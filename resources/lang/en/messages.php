@@ -1,14 +1,18 @@
 <?php
 
 return [
-    // NAVBAR
+    // navbar
     'about' => 'About',
+    'hive' => 'Hive',
+    'beehive' => 'Beehive',
+    'getting_started' => 'Getting started',
+    'financial_analysis' => 'Financial analysis',
     'catalog' => 'Catalog',
     'services' => 'Projects',
     'contact' => 'Contact us',
     'news' => 'News',
 
-    // BUTTONS
+    // buttons
     'btn_blog' => 'Read more',
     'btn_catalog' => 'Detail',
     'btn_contact_us' => 'Send',
@@ -18,38 +22,38 @@ return [
     'btn_go_back_item' => 'Go back',
     'go_to_contact' => 'Continue',
 
-    // BLOG
+    // blog
     'banner' => 'Hello, Welcome',
     'banner_content' => 'In this area you can inform about the various activities we do , besides publishing content that will help you to understand that beekeeping is . Hopefully you enjoy our little Blog.',
     'by' => 'By',
 
-    // MISION VISION
+    // mision vision
     'mission' => 'Mission',
     'mission_content' => 'We are a company dedicated to research, innovation and development of apiculture products quality. We design, manufacture and market model hexagonal hives Vincent, equipment and accessories for beekeeping in order to meet the highest expectations of our customers. We are highly committed to environmental conservation, restoration of ecosystems, and social - economic development of beekeeping.',
     'view' => 'View',
     'view_content' => 'Becoming a leader in the manufacture of hives and distribution and customer service are always looking for excellence and leadership in beekeeping.',
 
-    // INFO
+    // info
     'direction' => 'Address',
     'phones' => 'Phones',
 
-    // FORM CONTACT US
+    // form contact us
     'title_panel' => 'Contact us',
     'name' => 'Name',
     'mail' => 'Mail',
     'message' => 'Message',
     'greeting' =>  'Thanks for writing to us. Soon we will contact you.',
 
-    // SERVICES
+    // services
     'courses' => 'Courses',
     'consultation' => 'Consultation',
     'development_projects' => 'Development projects',
     'manual' => 'Download manual',
 
-    // ACTIVITIES
+    // activities
     'activities' => 'Activities',
 
-    // ITEMS
+    // items
     'description' => 'Description',
     'price' => 'Price'
 ];
