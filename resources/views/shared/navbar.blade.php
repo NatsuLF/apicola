@@ -7,8 +7,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url('/') }}" style="padding-top: 6px;">
-                <img src="{{ asset('images/logo/logo.png') }}" style="">
+            <a class="navbar-left" href="{{ url('/') }}">
+                <img src="{{ asset('images/logo/logo.png') }}" style="padding-top: 3px;">
             </a>
         </div>
         <div class="collapse navbar-collapse" id="navigation">
@@ -38,7 +38,7 @@
                         <i class="fa fa-newspaper-o" aria-hidden="true"></i> {{ trans('messages.news') }}
                     </a>
                 </li>
-                <li class="dropdown language">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                         @if (Config::get('languages')[App::getLocale()] == 'English')
                             <img src="{{ asset('images/flags/united-states.gif') }}" alt="English">

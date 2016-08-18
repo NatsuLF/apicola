@@ -23,7 +23,7 @@
     <body>
         @include('shared.navbar')
 
-        <div class="container">
+        <div class="container body-container">
             <div class="row">
                 @yield('content')
             </div>
@@ -32,6 +32,24 @@
         <script src="{{ asset('components/jquery/dist/jquery.min.js') }}"></script>
         <script src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/textarea.js') }}"></script>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><i class="fa fa-copyright" aria-hidden="true"></i> 2016 - UCC Leon</p>
+                        <p>Proyecto colmenas hexagonales Vincent</p>
+                    </div>
+                    <div id="footer-resources" class="col-md-6">
+                        <p>
+                            <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
         @yield('javascripts')
     </body>

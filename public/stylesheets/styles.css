@@ -6,7 +6,6 @@ html {
 body {
     background: url('../images/patterns/wood_pattern.png') #FFC400;
     padding: 75px 0 0 0;
-    margin-bottom: 60px;
 }
 
 label {
@@ -14,10 +13,37 @@ label {
     font-size: 13px;
 }
 
+section { margin-bottom: 2em; }
+
+footer {
+    background: #FFF;
+    margin-top: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+footer p {
+    color: #7b8a8b;
+    font-size: 13px;
+    margin-bottom: 0.25em;
+}
+
+footer #footer-resources {
+    text-align: right;
+}
+
+footer #footer-resources p a { padding: 0 5px; }
+
 textarea#body {
     resize: vertical;
     min-height: 150px;
     max-height: auto;
+}
+
+.body-container {
+    -webkit-flex: 1;
+    flex: 1;
+    min-height: 600px;
 }
 
 div.container-fluid {
@@ -52,15 +78,6 @@ div.container-fluid {
 
 .panel-primary { border-color: #FFF; }
 
-a > .fa {
-    padding-top: 10px;
-    text-decoration: none;
-}
-
-.shared-social {
-    margin-top: 75px;
-}
-
 .album-cat {
     background-color: #FFF;
     height: 200px;
@@ -68,11 +85,18 @@ a > .fa {
 }
 
 /* OVERWRITING BOOTSTRAP*/
-.well { background: #FFF; }
+.well {
+    background: #FFF;
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    border: 1px solid #FFF;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 
 .language { padding-top: 5px;  }
-
-.carousel { margin-bottom: 15px; }
 
 .carousel img { min-width: 100%; }
 
