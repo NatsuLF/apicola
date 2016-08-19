@@ -45,6 +45,7 @@
                             <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
                         </p>
                     </div>
                 </div>

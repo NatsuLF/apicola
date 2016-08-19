@@ -7,14 +7,9 @@
         <div class="well" id="{{ $item->slug }}">
             <div class="row">
                 <div class="col-md-6">
-                    <h4>{{ $item->name }}</h4>
-                    <label>{{ trans('messages.description') }}</label>
-                    <p>{{ $item->description }}</p>
+                    @include('shared.item_description')
 
-                    <label>{{ trans('messages.price') }}</label>
-                    <p>{{ '$ ' . $item->price }}</p>
-
-                    <a class="btn btn-info" href="{{ url('catalogo' . '/' . $item->slug) }}">
+                    <a class="btn btn-info" href="{{ url('catalog' . '/' . $item->slug) }}">
                         {{ trans('messages.btn_catalog') }}
                     </a>
                 </div>

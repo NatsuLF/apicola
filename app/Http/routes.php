@@ -56,9 +56,9 @@ Route::delete('posts/{post}', ['uses' => 'PostController@delete', 'middleware' =
 
 
 // ITEMS - Public
-Route::get('catalogo', 'ItemController@catalogo');
+Route::get('catalog', 'ItemController@catalog');
 
-Route::get('/catalogo/{slug}', 'ItemController@detail_prod');
+Route::get('catalog/{slug}', 'ItemController@detail');
 
 // ITEMS - Auth
 Route::get('items', ['uses' => 'ItemController@index', 'middleware' => 'auth']);

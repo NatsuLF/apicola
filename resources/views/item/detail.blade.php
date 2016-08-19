@@ -4,11 +4,9 @@
 
 @section('javascripts')
     <script>
-        $(function() {
-            $('.carousel').carousel({
-                interval: 5000,
-                pause: 'hover'
-            })
+        $('.carousel').carousel({
+            interval: 5000,
+            pause: 'hover'
         });
     </script>
 @endsection
@@ -20,23 +18,7 @@
                 <a class="btn btn-default" href="{{ url()->previous() . '#' . $item->slug }}">
                     {{ trans('messages.btn_go_back_item') }}
                 </a>
-                <h4>{{ $item->name }}</h4>
-
-                <label>{{ trans('messages.description') }}</label>
-                <p>{{ $item->description }}</p>
-
-                <label>{{ trans('messages.price') }}</label>
-                <p>{{ '$ ' . $item->price }}</p>
-
-                <div class="btn-buy">
-                    <button type="button" class="btn btn-success">
-                        <i class="fa fa-paypal fa-lg" aria-hidden="true"></i> {{ trans('messages.btn_buy_now') }}
-                    </button>
-
-                    <button type="button" class="btn btn-info">
-                        <i class="fa fa-cart-plus fa-lg" aria-hidden="true"></i> {{ trans('messages.btn_add_to_car') }}
-                    </button>
-                </div>
+                @include('shared.item_description')
             </div>
 
             <div class="col-md-6">
