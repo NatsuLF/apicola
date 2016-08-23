@@ -5,6 +5,12 @@
 @section('stylesheets')
     <link rel="stylesheet" href="{{ asset('components/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('components/summernote/dist/summernote.css') }}">
+
+    <style>
+        .note-group-select-from-files {
+            display: none;
+        }
+    </style>
 @endsection
 
 @section('javascripts')
