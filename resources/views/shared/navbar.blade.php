@@ -30,7 +30,7 @@
                             </a>
                         </li>
                         <li class="{{ $action == 'getting_started' ? 'active' : '' }}">
-                            <a href="{{ url('hive') }}">
+                            <a href="{{ url('starting') }}">
                                 {{ trans('messages.getting_started') }}
                             </a>
                         </li>

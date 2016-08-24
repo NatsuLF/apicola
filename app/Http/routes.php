@@ -9,6 +9,8 @@ Route::get('/', 'StaticController@about');
 
 Route::get('/hive', 'StaticController@hive');
 
+Route::get('/starting', 'StaticController@getting_started');
+
 Route::get('/financial_analysis', 'StaticController@financial_analysis');
 
 Route::get('/services', 'StaticController@services');
