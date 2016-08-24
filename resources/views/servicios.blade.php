@@ -77,17 +77,6 @@
                 Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            <p>
-                <a class="btn btn-default" href="https://drive.google.com/file/d/0B0qJycjoKzWpR0d4QWlLVnZLSW8/view?usp=sharing" target="_blank">
-                    Colmena Hexagonal Modelo Vincent <i class="fa fa-download" aria-hidden="true"></i>
-                </a>
-            </p>
-
-            <p>
-                <a class="btn btn-default" href="https://drive.google.com/file/d/0B0qJycjoKzWpck1kQXB3aW1tbVl6ZW5BY1laaHRfOHY5YWZR/view?usp=sharing" target="_blank">
-                    Analisis beneficio costo inversion 20 colmenas <i class="fa fa-download" aria-hidden="true"></i>
-                </a>
-            </p>
         </div>
     </div>
 @endsection

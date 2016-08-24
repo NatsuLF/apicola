@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App;
 use Mail;
 use Validator;
 use Illuminate\Http\Request;
@@ -25,12 +26,18 @@ class ContactController extends Controller
             return redirect()->back();
         }
 
-        $data = ['name' => $request->name, 'mail' => $request->mail, 'body' => $request->body];
+        $addressee = App::environment('local') ? 'mario.martinez@ucc.edu.ni' : 'amakenadog@gmail.com';
+        $data = [
+            'name' => $request->name,
+            'mail' => $request->mail,
+            'body' => $request->body,
+            'addressee' => $addressee
+        ];
 
         Mail::send('email.contact', $data, function($message) use ($data)
         {
             $message->from($data['mail'], $data['name']);
-            $message->to('leodota7@gmail.com')->subject('Contact email');
+            $message->to($data['addressee'])->subject('Contact email');
         });
 
         return view('greeting');
