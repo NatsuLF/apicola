@@ -26,7 +26,7 @@ class ContactController extends Controller
             return redirect()->back();
         }
 
-        $addressee = App::environment('local') ? 'mario.martinez@ucc.edu.ni' : 'amakenadog@gmail.com';
+        $addressee = App::environment('local') ? 'mario.martinez@ucc.edu.ni' : 'martin.cisneros@ucc.edu.ni';
         $data = [
             'name' => $request->name,
             'mail' => $request->mail,
