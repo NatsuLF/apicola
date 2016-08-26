@@ -14,14 +14,7 @@
                 enim quis ex magnam iusto.
             </p>
 
-            <iframe
-                width=100%
-                height=500
-                src="https://docs.google.com/spreadsheets/d/1ZUKAbHyDorih0wD1bKnLpsK_igdEQ3Wy89BhwkgVEIc/pubhtml?gid=375998749&amp;
-                single=true
-                widget=true
-                headers=false">
-            </iframe>
+            <iframe width=100% height=500 src={{ $spreadsheet_source }}></iframe>
         </div>
     </div>
 

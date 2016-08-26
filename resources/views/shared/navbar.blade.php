@@ -35,7 +35,7 @@
                             </a>
                         </li>
                         <li class="{{ $action == 'financial_analysis' ? 'active' : '' }}">
-                            <a href="{{ url('financial_analysis') }}">
+                            <a href="{{ url('analysis') }}">
                                 {{ trans('messages.financial_analysis') }}
                             </a>
                         </li>
