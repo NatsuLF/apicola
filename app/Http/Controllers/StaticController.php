@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App;
@@ -10,7 +11,13 @@ class StaticController extends Controller
 {
     public function about()
     {
-        return view('home_app');
+        $images = [
+            'https://s3-us-west-2.amazonaws.com/apicolabucket/carousel/c1.jpg',
+            'https://s3-us-west-2.amazonaws.com/apicolabucket/carousel/c2.jpg',
+            'https://s3-us-west-2.amazonaws.com/apicolabucket/carousel/c3.jpg'
+        ];
+
+        return view('home', ['images' => $images]);
     }
 
     public function hive()
