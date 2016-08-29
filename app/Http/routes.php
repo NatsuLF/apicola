@@ -132,3 +132,21 @@ Route::delete('activities/{activity}', [
     'uses' => 'ActivityController@delete',
     'middleware' => 'auth'
 ]);
+
+// CAROUSEL
+Route::get('carousel', [
+    'as' => 'carousel',
+    'uses' => 'CarouselController@index',
+    'middleware' => 'auth'
+]);
+
+Route::post('carousel/upload', [
+    'as' => 'carousel_upload',
+    'uses' => 'CarouselController@upload',
+    'middleware' => 'auth'
+]);
+
+Route::get('carousel/delete/{file}', [
+    'uses' => 'CarouselController@delete',
+    'middleware' => 'auth'
+]);

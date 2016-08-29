@@ -17,7 +17,7 @@
 @endsection
 
 @section('content')
-  <a href="{{ url('posts') }}">Regresar</a>
+    <a href="{{ url('posts') }}">Regresar</a>
 
     <form action="{{ '/posts' }}" id="form" method="post" autocomplete="off">
         {{ csrf_field() }}

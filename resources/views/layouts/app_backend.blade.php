@@ -74,15 +74,36 @@
                           <i class="fa fa-bell-o" aria-hidden="true"></i> Actividades
                         </a>
                     </li>
+                    <li role="presentation" class="{{ $controller == 'CarouselController' ? 'active' : 'no-active' }}">
+                        <a href="{{ url('carousel') }}">
+                          <i class="fa fa-picture-o" aria-hidden="true"></i> Carrusel
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-8">
                 @yield('content')
             </div>
             <div class="col-md-2">
-                <a href="{{ $_SERVER['REQUEST_URI'] . '/create' }}" class="btn btn-primary btn-block">
-                  <i class="fa fa-plus-circle" aria-hidden="true"></i> Crear
-                </a>
+                @if ($controller == 'CarouselController')
+                    <form action="{{ url('carousel/upload') }}" method="post" enctype="multipart/form-data" autocomplete="off">
+                        {{ csrf_field() }}
+
+                        <label class="btn btn-default btn-block">
+                            Buscar imagen <input type="file" name="image" id="image" style="display: none;">
+                        </label>
+
+                        <button type="submit" class="btn btn-primary btn-block">Confirmar</button>
+                    </form>
+
+                    @if (session('message'))
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+                @else
+                    <a href="{{ $_SERVER['REQUEST_URI'] .'/create' }}" class="btn btn-primary btn-block">Agregar</a>
+                @endif
             </div>
         </div>
     </div>
