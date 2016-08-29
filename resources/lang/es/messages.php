@@ -5,7 +5,7 @@ return [
     'about' => 'Nosotros',
     'hive' => 'Colmena',
     'beehive' => 'La colmena',
-    'getting_started' => 'Empezando',
+    'getting_started' => 'Cómo iniciar un panal de abejas hexagonal',
     'financial_analysis' => 'Analisis finaciero',
     'catalog' => 'Catalogo',
     'services' => 'Proyectos',

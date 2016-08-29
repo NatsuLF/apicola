@@ -5,7 +5,7 @@ return [
     'about' => 'About',
     'hive' => 'Hive',
     'beehive' => 'Beehive',
-    'getting_started' => 'Getting started',
+    'getting_started' => 'How to start a hexagonal beehive',
     'financial_analysis' => 'Financial analysis',
     'catalog' => 'Catalog',
     'services' => 'Projects',

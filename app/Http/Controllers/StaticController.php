@@ -27,7 +27,14 @@ class StaticController extends Controller
 
     public function getting_started()
     {
-        return view('getting_started');
+        $infographics = [
+            'en' => 'https://s3-us-west-2.amazonaws.com/apicolabucket/infographics/infographic-en.jpeg',
+            'es' => 'https://s3-us-west-2.amazonaws.com/apicolabucket/infographics/infographic-es.jpeg'
+        ];
+
+        $infographic = App::getLocale() == 'en' ? $infographics['en'] : $infographics['es'];
+
+        return view('getting_started', ['infographic' => $infographic]);
     }
 
     public function financial_analysis()

@@ -39,7 +39,9 @@
                 <div class="col-md-6">
                     <div class="well well-lg">
                         <h4>{{ trans('messages.vission') }}</h4>
-                        <p>{{ trans('messages.vission_content') }}</p>
+                        <p style="padding-bottom: 40px;">
+                            {{ trans('messages.vission_content') }}
+                        </p>
                     </div>
                 </div>
             </div>
