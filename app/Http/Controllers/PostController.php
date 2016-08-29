@@ -67,7 +67,7 @@ class PostController extends Controller
             ->orderBy('date', 'asc')
             ->get();
 
-        return view('news', [
+        return view('post.news', [
             'posts' => $posts,
             'activities' => $activities
         ]);
@@ -117,7 +117,7 @@ class PostController extends Controller
     {
         $post = Post::where('slug', '=', $slug)->first();
 
-        return view('detail_post', ['post' => $post]);
+        return view('post.post', ['post' => $post]);
     }
 
     private function get_tags_id($tags)

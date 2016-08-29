@@ -15,9 +15,8 @@
     <div class="well">
         <div class="row">
             <div class="col-md-6">
-                <a class="btn btn-default" href="{{ url()->previous() . '#' . $item->slug }}">
-                    {{ trans('messages.btn_go_back_item') }}
-                </a>
+                <a href="{{ url()->previous() . '#' . $item->slug }}">{{ trans('messages.btn_go_back_item') }}</a>
+
                 @include('shared.item_description')
             </div>
 

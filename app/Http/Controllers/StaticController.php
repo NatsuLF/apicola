@@ -48,6 +48,6 @@ class StaticController extends Controller
 
     public function services()
     {
-        return view('servicios');
+        return view('servicies');
     }
 }

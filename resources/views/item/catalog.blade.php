@@ -9,7 +9,7 @@
                 <div class="col-md-6">
                     @include('shared.item_description')
 
-                    <a class="btn btn-info" href="{{ url('catalog' . '/' . $item->slug) }}">
+                    <a class="btn btn-default" href="{{ url('catalog' . '/' . $item->slug) }}">
                         {{ trans('messages.btn_catalog') }}
                     </a>
                 </div>
