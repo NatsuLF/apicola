@@ -30,8 +30,8 @@ return [
     // mision vision
     'mission' => 'Mission',
     'mission_content' => 'We are a program dedicated to research, innovate technology, and product development in the beekeeping sector. We design, manufacture hexagonal Vincent hives based on the natural habitat of bees. We are highly committed to environmental conservation, restoration of ecosystems, and social - economic development of beekeeping promoting a sustainable production model.',
-    'vission' => 'Vission',
-    'vission_content' => 'Be leaders and agents of Sustainable Beekeeping driven by scientific and technological research in our region so it can be applied as an instrument of poverty alleviation and ecosystems conservation and restoration.',
+    'vision' => 'Vision',
+    'vision_content' => 'Be leaders and agents of Sustainable Beekeeping driven by scientific and technological research in our region so it can be applied as an instrument of poverty alleviation and ecosystems conservation and restoration.',
 
     // info
     'direction' => 'Address',
