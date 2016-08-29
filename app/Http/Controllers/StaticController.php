@@ -2,20 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Storage;
 use App;
 
 class StaticController extends Controller
 {
+    public function __construct()
+    {
+        $this->s3 = Storage::disk('s3');
+    }
+
     public function about()
     {
-        $images = [
-            'https://s3-us-west-2.amazonaws.com/apicolabucket/carousel/c1.jpg',
-            'https://s3-us-west-2.amazonaws.com/apicolabucket/carousel/c2.jpg',
-            'https://s3-us-west-2.amazonaws.com/apicolabucket/carousel/c3.jpg'
-        ];
+        $files = $this->s3->files('carousel');
+        $images = [];
+
+        foreach ($files as $file) {
+            array_push($images, $this->s3->url($file));
+        }
 
         return view('home', ['images' => $images]);
     }
