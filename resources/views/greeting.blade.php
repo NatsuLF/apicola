@@ -8,7 +8,7 @@
         <div class="well well-sm">
             <p>{{ trans('messages.greeting') }}</p>
 
-            <a href="{{ url('contacto') }}" class="btn btn-default">
+            <a href="{{ url('contact') }}" class="btn btn-default">
                 {{ trans('messages.go_to_contact') }}
             </a>
         </div>

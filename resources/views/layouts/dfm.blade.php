@@ -4,18 +4,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ URL::asset('components/bootstrap/dist/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('components/font-awesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('stylesheets/dashboard/app.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('stylesheets/dashboard/app.css') }}">
+
+    @yield('stylesheets')
 </head>
 <body>
     <div class="col-md-3"></div>
     <div class="col-md-6">
-        <a href="{{ '/tags' }}" class="btn-back btn btn-primary">Regresar</a>
-        
         @yield('content')
     </div>
-    <div class="col-md-3"></div>
+    <div class="col-md-3">
+        @yield('complement')
+    </div>
+
+    @yield('javascripts')
 </body>
 </html>

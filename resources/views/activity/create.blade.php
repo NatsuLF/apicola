@@ -1,14 +1,16 @@
-@extends('layouts.dfmf')
+@extends('layouts.dfm')
 
 @section('title', 'Agregar actividad')
 
 @section('stylesheets')
-    <link rel="stylesheet" href="{{ asset('components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('components/datetimepicker/build/jquery.datetimepicker.min.css') }}">
 @endsection
 
 @section('javascripts')
-    <script src="{{ asset('components/moment/min/moment.min.js') }}"></script>
-    <script src="{{ asset('components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ asset('components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('components/datetimepicker/build/jquery.datetimepicker.full.min.js') }}"></script>
+    <script src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/activity.js') }}"></script>
 @endsection
 
 @section('content')

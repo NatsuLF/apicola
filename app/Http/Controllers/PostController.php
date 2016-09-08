@@ -36,26 +36,10 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $current_user = $request->user();
-
-        $constraints = [
-            'title' => 'required',
-            'body' => 'required',
-            'summary' => 'required|max:255',
-            'tags' => 'required',
-        ];
-
-        $validator = Validator::make($request->all(), $constraints);
+        $validator = Validator::make($request->all(), $this->rules());
 
         if ($validator->fails()) {
-            return redirect('posts/create')
-                ->withInput()
-                ->withErrors($validator);
-        }
-
-        if (isset($request->published)) {
-            $published = true;
-        } else {
-            $published = false;
+            return redirect()->back()->withInput()->withErrors($validator);
         }
 
         $post = new Post;
@@ -63,13 +47,13 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->body = $request->body;
         $post->summary = trim($request->summary);
-        $post->published = $published;
+        $post->published = isset($request->published) ? true : false;
         $post->slug = str_slug($post->title, '_');
 
         $post->save();
         $post->tags()->sync($request->tags);
 
-        return redirect()->action('PostController@create')->with('message', 'Creado !');
+        return redirect()->action('PostController@create')->with('message', 'Articulo creado');
     }
 
     public function blog()
@@ -83,7 +67,7 @@ class PostController extends Controller
             ->orderBy('date', 'asc')
             ->get();
 
-        return view('news', [
+        return view('post.news', [
             'posts' => $posts,
             'activities' => $activities
         ]);
@@ -103,55 +87,37 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $current_user = $request->user();
-
-        $rules = [
-            'title' => 'required',
-            'body' => 'required',
-            'summary' => 'required|max:255',
-            'tags' => 'required',
-        ];
-
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $this->rules());
 
         if ($validator->fails()) {
-            return redirect('posts/' . $post->slug)
-                ->withInput()
-                ->withErrors($validator);
-        }
-
-        if (isset($request->published))
-        {
-            $published = true;
-        } else
-        {
-            $published = false;
+            return redirect('posts/' . $post->slug)->withInput()->withErrors($validator);
         }
 
         $post->title = $request->title;
-        $post->published = $published;
         $post->body = $request->body;
         $post->summary = trim($request->summary);
+        $post->published = isset($request->published) ? true : false;;
         $post->slug = str_slug($post->title, '_');
 
         $post->tags()->detach();
         $post->tags()->sync($request->tags);
         $post->save();
 
-        return redirect()->action('PostController@index')->with('message', 'Actualizado !');
+        return redirect()->action('PostController@index')->with('message', 'Actualizado');
     }
 
     public function delete(Post $post)
     {
         $post->delete();
 
-        return redirect()->action('PostController@index')->with('message', 'Eliminado !');
+        return redirect()->action('PostController@index')->with('message', 'Eliminado');
     }
 
     public function details(String $slug)
     {
         $post = Post::where('slug', '=', $slug)->first();
 
-        return view('detail_post', ['post' => $post]);
+        return view('post.post', ['post' => $post]);
     }
 
     private function get_tags_id($tags)
@@ -161,5 +127,15 @@ class PostController extends Controller
         }, $tags);
 
         return $data;
+    }
+
+    private function rules()
+    {
+        return [
+            'title' => 'required',
+            'body' => 'required',
+            'summary' => 'required|max:255',
+            'tags' => 'required',
+        ];
     }
 }

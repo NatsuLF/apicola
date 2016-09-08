@@ -35,24 +35,15 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $current_user = $request->user();
-
-        $rules = [
-            'name' => 'required',
-            'description' => 'required',
-            'price' => 'required',
-            'url' => 'required'
-        ];
-
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $this->get_rules());
 
         if ($validator->fails())
         {
-            return redirect('items/create')
-                ->withInput()
-                ->withErrors($validator);
+            return redirect()->back()->withInput()->withErrors($validator);
         }
 
         $item = new Item;
+
         $item->name = $request->name;
         $item->price = $request->price;
         $item->user_id = $current_user->id;
@@ -71,7 +62,7 @@ class ItemController extends Controller
         $item->save();
         $item->images()->saveMany($imageList);
 
-        return redirect()->action('ItemController@create')->with('message', 'Creado !');
+        return redirect()->action('ItemController@create')->with('message', 'Creado');
     }
 
 
@@ -83,21 +74,11 @@ class ItemController extends Controller
     public function update(Request $request, Item $item)
     {
         $current_user = $request->user();
-
-        $rules = [
-            'name' => 'required',
-            'description' => 'required',
-            'price' => 'required',
-            'url' => 'required'
-        ];
-
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $this->get_rules());
 
         if ($validator->fails())
         {
-            return redirect('/items/' . $item->id)
-                ->withInput()
-                ->withErrors($validator);
+            return redirect('/items/' . $item->id)->withInput()->withErrors($validator);
         }
 
         $item->name = $request->name;
@@ -120,9 +101,8 @@ class ItemController extends Controller
         $item->images()->saveMany($imageList);
         $item->save();
 
-        return redirect()->action('ItemController@index')->with('message', 'Actualizado !');
+        return redirect()->action('ItemController@index')->with('message', 'Actualizado');
     }
-
 
     public function delete(Item $item)
     {
@@ -132,19 +112,18 @@ class ItemController extends Controller
         return redirect()->action('ItemController@index')->with('message', 'Eliminado !');
     }
 
-    public function catalogo()
+    public function catalog()
     {
         $items = Item::orderBy('created_at', 'desc')->get();
 
-        return view('/catalogo', ['items' => $items]);
+        return view('item.catalog', ['items' => $items]);
     }
 
-    public function detail_prod(String $slug)
+    public function detail(String $slug)
     {
         $item = Item::where('slug', '=', $slug)->first();
 
-        // dd($_SERVER['REQUEST_URI']);
-        return view('item.detail_items', ['item' => $item]);
+        return view('item.detail', ['item' => $item]);
     }
 
     private function areValidUrl($images)
@@ -168,5 +147,15 @@ class ItemController extends Controller
         }
 
         return true;
+    }
+
+    private function get_rules()
+    {
+        return [
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'url' => 'required'
+        ];
     }
 }
