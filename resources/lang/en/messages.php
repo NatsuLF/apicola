@@ -8,16 +8,17 @@ return [
     'getting_started' => 'How to start a hexagonal beehive',
     'financial_analysis' => 'Financial analysis',
     'catalog' => 'Catalog',
+    'patent' => 'Patent',
     'services' => 'Projects',
     'contact' => 'Contact us',
     'news' => 'News',
+
+    'patent_content' => 'The Vincent hive is registered before the United States Patente and Trademark Office as Patent N0. US 8,801,493 B2 which was approved on August 12, 2014. The tropicalized version of this hive is under the Patent Pending status before the Nicaragua\'s Intellectual Property General Registry and already published on the Nicaraguan official newspaper "La Gaceta"',
 
     // buttons
     'btn_blog' => 'Read more',
     'btn_catalog' => 'Detail',
     'btn_contact_us' => 'Send',
-    'btn_buy_now' => 'Buy Now',
-    'btn_add_to_car' => 'Add to Cart',
     'btn_go_back_post' => 'Go back',
     'btn_go_back_item' => 'Go back',
     'go_to_contact' => 'Continue',
@@ -37,7 +38,7 @@ return [
     'direction' => 'Address',
     'phones' => 'Phones',
 
-    // form contact us
+    // contact
     'title_panel' => 'Contact us',
     'name' => 'Name',
     'mail' => 'Mail',

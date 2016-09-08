@@ -8,16 +8,17 @@ return [
     'getting_started' => 'Cómo iniciar un panal de abejas hexagonal',
     'financial_analysis' => 'Analisis finaciero',
     'catalog' => 'Catalogo',
+    'patent' => 'Patente',
     'services' => 'Proyectos',
     'contact' => 'Contactanos',
     'news' => 'Noticias',
+
+    'patent_content' => 'La colmena Vincent está registrada ante la Oficina de Patentes y Marcas Registradas de los Estados Unidos como Patent N0. US 8,801,493 B2 aprobada el 12 de Agosto del 2014.  La versión tropicalizada de esta colmena se encuentra bajo el estatus de "Patente Pendiente" ante la Dirección General del Registro de la Propiedad Intelectual de la República de Nicaragua y ya publicado en el diario oficial "La Gaceta"',
 
     // buttons
     'btn_blog' => 'Seguir leyendo',
     'btn_catalog' => 'Detalle',
     'btn_contact_us' => 'Enviar',
-    'btn_buy_now' => 'Comprar ahora',
-    'btn_add_to_car' => 'Añadir al carro de compras',
     'btn_go_back_post' => 'Volver',
     'btn_go_back_item' => 'Volver',
     'go_to_contact' => 'Continuar',

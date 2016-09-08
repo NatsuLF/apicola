@@ -39,6 +39,11 @@
                                 {{ trans('messages.financial_analysis') }}
                             </a>
                         </li>
+                        <li class="{{ $action == 'patent' ? 'active' : '' }}">
+                            <a href="{{ url('patent') }}">
+                                {{ trans('messages.patent') }}
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="{{ $controller == 'ItemController' ? 'active' : 'no-active' }}">

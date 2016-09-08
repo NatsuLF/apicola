@@ -11,6 +11,8 @@ Route::get('/starting', 'StaticController@getting_started');
 
 Route::get('/analysis', 'StaticController@financial_analysis');
 
+Route::get('/patent', 'StaticController@patent');
+
 Route::get('/services', 'StaticController@services');
 
 // MAIL

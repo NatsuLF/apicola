@@ -50,6 +50,18 @@ class StaticController extends Controller
         return view('financial_analysis', ['spreadsheet_source' => $spreadsheet_source]);
     }
 
+    public function patent()
+    {
+        $files = $this->s3->files('patent/images');
+        $images = [];
+
+        foreach ($files as $file) {
+            array_push($images, $this->s3->url($file));
+        }
+
+        return view('patent', ['images' => $images]);
+    }
+
     public function services()
     {
         return view('servicies');
