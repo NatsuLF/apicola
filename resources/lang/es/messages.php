@@ -51,5 +51,8 @@ return [
 
     // ITEMS
     'description' => 'Descripcion',
-    'price' => 'Precio'
+    'price' => 'Precio',
+
+    // BEEHIVE
+    'beehive' => 'La colmena'
 ];

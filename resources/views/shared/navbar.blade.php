@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="{{ url('/') }}" style="padding-top: 6px;">
-                <img src="{{ asset('images/logo/logo.png') }}" style="">
+                <img src="{{ asset('images/logo/logo.png') }}">
             </a>
         </div>
         <div class="collapse navbar-collapse" id="navigation">
@@ -18,23 +18,24 @@
                         <i class="fa fa-home" aria-hidden="true"></i> {{ trans('messages.about') }}
                     </a>
                 </li>
-                <li class="dropdown colmen {{ $controller == 'StaticController' && $action == 'colmen' ? 'active' : '' }}">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        La Colmena<span class="caret"></span>
+                <li class="dropdown {{ $controller == 'StaticController' && $action == 'about' ? 'active' : '' }}">
+                    <a href="{{ url('/') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-forumbee" aria-hidden="true"></i> {{ trans('messages.beehive') }} <span class="caret"></span>
                     </a>
+
                     <ul class="dropdown-menu">
-                        <li>
+                        <li class="{{ $controller == 'StaticController' && $action == 'colmen' ? 'active' : '' }}">
                             <a href="{{ url('colmen') }}">
                                 La colmena
                             </a>
                         </li>
-                        <li>
+                        <li class="{{ $controller == 'StaticController' && $action == 'init' ? 'active' : '' }}">
                             <a href="#">
                                 Como iniciar
                             </a>
                         </li>
                         <li role="separator" class="divider"></li>
-                        <li>
+                        <li class="{{ $controller == 'StaticController' && $action == 'finance' ? 'active' : '' }}">
                             <a href="#">
                                 Analizis Financiero
                             </a>
@@ -43,7 +44,7 @@
                 </li>
                 <li class="{{ $controller == 'ItemController' ? 'active' : 'no-active' }}">
                     <a href="/catalogo">
-                        <i class="fa {{ $controller == 'ItemController' ? 'fa-folder-open-o' : 'fa-folder-o' }} " aria-hidden="true"></i> {{ trans('messages.catalog') }}
+                        <i class="fa {{ $controller == 'ItemController' ? 'fa-folder-open-o' : 'fa-folder-o' }}" aria-hidden="true"></i> {{ trans('messages.catalog') }}
                     </a>
                 </li>
                 <li class="{{ $controller == 'StaticController' && $action == 'services' ? 'active' : '' }}">
@@ -61,7 +62,7 @@
                         <i class="fa fa-newspaper-o" aria-hidden="true"></i> {{ trans('messages.news') }}
                     </a>
                 </li>
-                <li class="dropdown language">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                         @if (Config::get('languages')[App::getLocale()] == 'English')
                             <img src="{{ asset('images/flags/united-states.gif') }}" alt="English">

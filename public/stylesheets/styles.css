@@ -29,11 +29,6 @@ div.container-fluid {
     border-color: #FFF;
     color: #000000;
 }
-
-.btn-primary {
-    background-color: #FFD600;
-    border-color: #FFF;
-    color: #000000;
 }
 
 .btn-primary:hover {
@@ -52,11 +47,6 @@ div.container-fluid {
 
 .panel-primary { border-color: #FFF; }
 
-a > .fa {
-    padding-top: 10px;
-    text-decoration: none;
-}
-
 .shared-social {
     margin-top: 75px;
 }
@@ -70,13 +60,12 @@ a > .fa {
 /* OVERWRITING BOOTSTRAP*/
 .well { background: #FFF; }
 
-.language { padding-top: 5px;  }
-
-.colmen { padding-top: 5px;  }
-
 .carousel { margin-bottom: 15px; }
 
 .carousel img { min-width: 100%; }
+
+/* Fixing fa icons */
+a > .fa { padding-top: 0; }
 
 /* SOCIAL MEDIA BUTTOMS STYLES */
 .resp-sharing-button {
