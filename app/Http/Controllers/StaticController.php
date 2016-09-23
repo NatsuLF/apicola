@@ -26,7 +26,14 @@ class StaticController extends Controller
 
     public function hive()
     {
-        return view('hive');
+        $infographics = [
+            'en' => 'https://s3-us-west-2.amazonaws.com/apicolabucket/hive/colmenaen.png',
+            'es' => 'https://s3-us-west-2.amazonaws.com/apicolabucket/hive/colemanes.png'
+        ];
+
+        $infographic = App::getLocale() == 'en' ? $infographics['en'] : $infographics['es'];
+
+        return view('hive', ['infographic' => $infographic]);
     }
 
     public function getting_started()
